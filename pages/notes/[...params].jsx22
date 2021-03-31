@@ -3,10 +3,11 @@ import { useRouter } from 'next/router';
 
 const Note = () => {
   const router = useRouter();
-  const { params } = router.query;
+  const params = router.query.params || [];
   // params.forEach(param => console.log(param));
   console.log(params);
-  return <h1>Note Page With Params</h1>;
+
+  return <h1>Note Page With Params { params.join('/') }</h1>;
 }
 
 export default Note;

@@ -7,8 +7,8 @@ const handler = nc()
   })
   .post((req, res) => {
     const note = {
-      ...req.body,
-      id: Date.now()
+      id: Date.now(),
+      ...req.body
     }
     notes.push(note);
     res.json({data: note})
